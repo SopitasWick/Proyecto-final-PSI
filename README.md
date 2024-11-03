@@ -8,4 +8,4 @@ Para ayudar a preparar el entorno de desarrollo, se utilizo lo siguiente:
 
 -JDK: versión 23: https://download.oracle.com/java/23/latest/jdk-23_windows-x64_bin.exe
 
--JAR: mysql-connector-j-9.1.0: https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-j-9.1.0.zip
+-JAR: mysql-connector-java-8.0.17
