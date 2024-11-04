@@ -1,4 +1,4 @@
-/*
+ /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -34,37 +34,32 @@ private EntityManagerFactory emf;
     }
 
     public void create(Carrito carrito) throws PreexistingEntityException, Exception {
-        EntityManager em = null;
-        try {
-            em = getEntityManager();
-            em.getTransaction().begin();
-            Transaccion transaccion = carrito.getTransaccion();
-            if (transaccion != null) {
-                transaccion = em.getReference(transaccion.getClass(), transaccion.getIdTransaccion());
-                carrito.setTransaccion(transaccion);
-            }
-            em.persist(carrito);
-            if (transaccion != null) {
-                Carrito oldIdCarritoOfTransaccion = transaccion.getIdCarrito();
-                if (oldIdCarritoOfTransaccion != null) {
-                    oldIdCarritoOfTransaccion.setTransaccion(null);
-                    oldIdCarritoOfTransaccion = em.merge(oldIdCarritoOfTransaccion);
-                }
-                transaccion.setIdCarrito(carrito);
-                transaccion = em.merge(transaccion);
-            }
-            em.getTransaction().commit();
-        } catch (Exception ex) {
-            if (findCarrito(carrito.getIdCarrito()) != null) {
-                throw new PreexistingEntityException("Carrito " + carrito + " already exists.", ex);
-            }
-            throw ex;
-        } finally {
-            if (em != null) {
-                em.close();
-            }
+    EntityManager em = null;
+    try {
+        em = getEntityManager();
+        em.getTransaction().begin();
+
+        // Check for existing cart 
+        Carrito existingCart = em.find(Carrito.class, carrito.getIdCarrito());
+        if (existingCart != null) {
+            throw new PreexistingEntityException("Carrito with ID " + carrito.getIdCarrito() + " already exists.");
+        }
+
+        // Persist the cart to the database
+        em.persist(carrito);
+
+        em.getTransaction().commit();
+    } catch (Exception ex) {
+        if (findCarrito(carrito.getIdCarrito()) != null) {
+            throw new PreexistingEntityException("Carrito " + carrito + " already exists.", ex);
+        }
+        throw ex;
+    } finally {
+        if (em != null) {
+            em.close();
         }
     }
+}
 
     public void edit(Carrito carrito) throws IllegalOrphanException, NonexistentEntityException, Exception {
         EntityManager em = null;

@@ -71,6 +71,15 @@ public class Carrito implements Serializable {
         this.foto = foto;
     }
 
+    public Carrito(Integer idCarrito, float costo, String descripcion, String estado, String disponibilidad) {
+        this.idCarrito = idCarrito;
+        this.costo = costo;
+        this.descripcion = descripcion;
+        this.estado = estado;
+        this.disponibilidad = disponibilidad;
+    }
+    
+
     public Integer getIdCarrito() {
         return idCarrito;
     }
@@ -149,7 +158,7 @@ public class Carrito implements Serializable {
 
     @Override
     public String toString() {
-        return "JPA.Carrito[ idCarrito=" + idCarrito + " ]";
+        return "Carrito{" + "idCarrito=" + idCarrito + ", costo=" + costo + ", descripcion=" + descripcion + ", estado=" + estado + ", disponibilidad=" + disponibilidad + '}';
     }
     
 }
