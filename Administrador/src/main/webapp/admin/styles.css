@@ -1,0 +1,257 @@
+/* styles.css */
+
+/* Página de inicio */
+
+/* Introducción */
+.intro {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 600px;
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Menú principal */
+.menu-principal {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.menu-principal h2 {
+    margin-bottom: 20px;
+    color: #4a90e2;
+}
+
+.opciones-menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-menu {
+    display: inline-block;
+    padding: 15px 20px;
+    background-color: #4a90e2;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 1em;
+}
+
+.btn-menu:hover {
+    background-color: #357ab7;
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    margin-top: auto;
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* Reseteo básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Encabezado */
+header {
+    margin-top: 20px;
+}
+
+h1 {
+    color: #4a90e2;
+    margin-bottom: 20px;
+}
+
+/* Sección de acciones */
+.acciones {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #4a90e2;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #357ab7;
+}
+
+/* Tabla de carritos */
+.tabla-carritos table {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tabla-carritos th, .tabla-carritos td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.tabla-carritos th {
+    background-color: #4a90e2;
+    color: #fff;
+}
+
+.tabla-carritos td {
+    color: #333;
+}
+
+.btn-actualizar {
+    background-color: #4CAF50;
+}
+
+.btn-eliminar {
+    background-color: #f44336;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-contenido {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cerrar {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cerrar:hover {
+    color: #000;
+}
+
+/* Formulario en el modal */
+form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4a90e2;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #357ab7;
+}
+
+/* Página de Contacto */
+.contacto p, .nosotros p {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 600px;
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+form label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+form input, form textarea, form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+form button:hover {
+    background-color: #357ab7;
+}
+
+/* Página Sobre Nosotros */
+.nosotros h2 {
+    text-align: center;
+    color: #4a90e2;
+    margin-top: 20px;
+}
+
+.nosotros p {
+    text-align: justify;
+    margin: 20px auto;
+    max-width: 800px;
+    line-height: 1.8;
+    color: #555;
+}
