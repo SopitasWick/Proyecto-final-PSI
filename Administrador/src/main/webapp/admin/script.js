@@ -1,5 +1,8 @@
 // script.js
-
+fetch("CatalogoCRUD", {
+                method: "GET",
+                headers: {"Content-Type": "application/json"}
+    }).then(res => console.log(res.json()));
 // Obtener elementos
 const modal = document.getElementById("modal-formulario-carrito");
 const btnCrear = document.getElementById("btn-crear");

@@ -4,21 +4,21 @@
  */
 package Servlets;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonSyntaxException;
+import Implementaciones.Administrar;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.BufferedReader;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author José Iván Vázquez Brambila
  */
-public class Login extends HttpServlet {
+public class CatalogoCRUD extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,10 +37,10 @@ public class Login extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Login</title>");
+            out.println("<title>Servlet CatalogoCRUD</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Login at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet CatalogoCRUD at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -58,7 +58,8 @@ public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        Administrar ac = new Administrar();
+        System.out.println("crud");
     }
 
     /**
@@ -72,32 +73,7 @@ public class Login extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        BufferedReader reader = request.getReader();
-        StringBuilder stringBuilder = new StringBuilder();
-        String line;
-        while ((line = reader.readLine()) != null) 
-            stringBuilder.append(line);
-        //System.out.println("Line: " + stringBuilder);
-        Gson gson= new Gson();
-        LoginData loginData=null;
-        try{
-             
-             loginData = gson.fromJson(stringBuilder.toString(), LoginData.class);
-        }catch(JsonSyntaxException e){}        
-        
-        var username = loginData.getUsername();
-        var password = loginData.getPassword();
-        
-        //System.out.println("usuario: "+username+" pass: "+password);
-        
-        
-        if ("admin".equals(username) && "admin123".equals(password)) 
-            response.sendRedirect(request.getContextPath() + "/admin/admin-index.jsp");
-        else {
-            response.setContentType("application/json");
-            response.getWriter().write("{\"status\":\"error\", \"message\":\"Credenciales incorrectas\"}");
-        }
+        processRequest(request, response);
     }
 
     /**
@@ -109,14 +85,5 @@ public class Login extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-    
-    // Clase para mapear los datos JSON
-    private class LoginData {
-        private String username;
-        private String password;
-
-        public String getUsername() { return username; }
-        public String getPassword() { return password; }
-    }
 
 }

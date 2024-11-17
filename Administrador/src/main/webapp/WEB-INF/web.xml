@@ -4,9 +4,17 @@
         <servlet-name>Login</servlet-name>
         <servlet-class>Servlets.Login</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CatalogoCRUD</servlet-name>
+        <servlet-class>Servlets.CatalogoCRUD</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CatalogoCRUD</servlet-name>
+        <url-pattern>/CatalogoCRUD</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

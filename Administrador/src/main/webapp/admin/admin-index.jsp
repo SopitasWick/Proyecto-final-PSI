@@ -29,9 +29,9 @@
     <section class="menu-principal">
         <h2>¿Qué deseas hacer hoy?</h2>
         <div class="opciones-menu">
-            <a href="admin-catalogo.html" class="btn-menu">Ver Catálogo de Carritos</a>
-            <a href="contacto.html" class="btn-menu">Contacto</a>
-            <a href="nosotros.html" class="btn-menu">Sobre Nosotros</a>
+            <a href="admin-catalogo.jsp" class="btn-menu">Ver Catálogo de Carritos</a>
+            <a href="contacto.jsp" class="btn-menu">Contacto</a>
+            <a href="nosotros.jsp" class="btn-menu">Sobre Nosotros</a>
         </div>
     </section>
 

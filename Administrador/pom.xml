@@ -30,6 +30,16 @@
             <version>2.11.0</version>
             <type>jar</type>
         </dependency>
+        <dependency>
+            <groupId>itson.com.mx</groupId>
+            <artifactId>PersistenciasBD</artifactId>
+            <version>1.0-AdministrarCatalogo</version>
+        </dependency>
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.1.0</version>
+        </dependency>
     </dependencies>
     
     <build>
