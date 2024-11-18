@@ -17,31 +17,31 @@ Persistencia persistencia = new Persistencia();
     @Override
     public void RegistrarCarrito(Carrito carrito) throws Exception {
         //LLAMAR METODO CORRESPONDIENTE DE Persistencia
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        persistencia.GuardarRegistroCarrito(carrito);
     }
 
     @Override
     public void ActualizarCarrito(Carrito carrito) throws Exception {
         //LLAMAR METODO CORRESPONDIENTE DE Persistencia
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        persistencia.ActualizarRegistroCarrito(carrito);
     }
 
     @Override
     public void EliminarCarrito(Integer id) throws Exception {
         //LLAMAR METODO CORRESPONDIENTE DE Persistencia
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        persistencia.EliminarRegistroCarrito(id);
     }
 
     @Override
     public List<Carrito> ConsultarCatalogoCarritos() throws Exception {
         //LLAMAR METODO CORRESPONDIENTE DE Persistencia
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return persistencia.ConsultarListaCarritos();
     }
 
     @Override
     public Carrito ConsultarCarritoId(Integer id) throws Exception {
         //LLAMAR METODO CORRESPONDIENTE DE Persistencia
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return persistencia.ConsultarCarritoId(id);
     }
     
 }
